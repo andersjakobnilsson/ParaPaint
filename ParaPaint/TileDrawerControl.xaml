@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="ParaPaint.TileDrawerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:my="clr-namespace:ParaPaint"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <my:Image64Convertor x:Key="image64Converter"/>
+        <Style x:Key="OldschoolBitmap" TargetType="{x:Type Image}">
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="NearestNeighbor" />
+        </Style>
+    </UserControl.Resources>
+    <Image Name="drawImage" Source="{Binding Path=ActiveTile.Image, Converter={StaticResource image64Converter}}" Height="Auto" HorizontalAlignment="Stretch" Margin="0,0,0,0" Stretch="Fill" VerticalAlignment="Top" Width="Auto" Style="{StaticResource OldschoolBitmap}" />
+</UserControl>
